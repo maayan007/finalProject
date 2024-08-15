@@ -34,3 +34,11 @@ export function fillAndSubmit(email, password) {
     I.fillField(testerLocators.registration.password, password);
     I.click(testerLocators.general.submitButton);
 }
+export async function fillRegistrationForm(firstName: string, lastName: string, email: string, password: string) {
+    I.amOnPage(Pages.Registration);
+    I.fillField(testerLocators.registration.firstName, firstName);
+    I.fillField(testerLocators.registration.lastName, lastName);
+    I.fillField('Email', email);
+    I.fillField('Password', password);
+    I.click(testerLocators.general.submitButton);
+}
